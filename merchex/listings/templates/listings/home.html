@@ -1,0 +1,25 @@
+{% extends 'listings/base.html' %}
+
+{% block content %}
+
+
+<div class="w3-container w3-center">
+  <h1 class="w3-text-orange" style="text-shadow:1px 1px 0 #444">
+  <b>Bonjour Marion, Bonjour Virgil, </b></h1>
+</div>
+    <br></br>
+    <br></br>
+
+<h2  style="text-shadow:1px 1px 0 #444">Merci de sélectionner le planning à transformer.</h2>
+<br>
+    <form  class="w3-input w3-border w3-round-large w3-light-grey" type="text" style="width:50%" method="post" enctype="multipart/form-data">
+        <br></br>
+<h4 class="w3-button w3-block w3-black w3-round-large" style="text-shadow:1px 1px 0 #444">
+    {% csrf_token %}
+    {{ form.as_p }}
+</h4>
+         <br></br>
+    <button type="submit" class="w3-button w3-block w3-black w3-border-red w3-round-large" style="width:75%">Télecharger et transformer le ficher</button>
+    </form>
+
+    {% endblock %}
